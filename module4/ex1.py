@@ -3,3 +3,4 @@ while number<=1000:
     if number % 3 == 0:
         print(str(number))
     number = number + 1
+
