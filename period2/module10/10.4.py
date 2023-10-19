@@ -20,7 +20,6 @@ class Car:
         self.travelled_distance += self.current_speed*number_hours
 
 class Race:
-    numbers_hour = 0
     def __init__(self, name, kilometers, car_list):
         self.name = name
         self.kilometers = kilometers
@@ -43,6 +42,7 @@ class Race:
         return win
 
 list_car = []
+numbers_hour = 0
 for num in range(1,11):
     registration_number = "ABC-" + str(num)
     car_number = Car(registration_number, (rd.randint(100,200)))
@@ -51,10 +51,10 @@ for num in range(1,11):
 race1 = Race("Grand Demolition Derby",8000, list_car)
 
 while True:
-    race1.numbers_hour += 1
+    numbers_hour += 1
     race1.hour_passes()
-    if race1.numbers_hour % 10 == 0:
-        print(f"After {race1.numbers_hour} minutes:")
+    if numbers_hour % 10 == 0:
+        print(f"After {numbers_hour} minutes:")
         race1.print_status()
 
     if race1.race_finished():
