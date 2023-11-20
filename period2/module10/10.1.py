@@ -15,11 +15,17 @@ class Elevator:
             print(f"The Elevator is at {self.current_floor} floor")
 
     def go_to_floor(self, destination_floor):
-        if destination_floor > self.current_floor:
+        if destination_floor > self.current_floor and destination_floor <= self.top_floor:
             self.floor_up((destination_floor - self.current_floor))
-        else:
+        elif destination_floor>= self.bottom_floor and destination_floor < self.current_floor:
             self.floor_down((self.current_floor - destination_floor))
+        elif destination_floor == self.current_floor:
+            print(f'The Elevator is at {self.current_floor} now')
+        else:
+            print("Can't do to this floor")
 
 elevator1 = Elevator(-1, 10)
-elevator1.go_to_floor(6)
-elevator1.go_to_floor(-1)
+elevator1.go_to_floor(12)
+elevator1.go_to_floor(-3)
+elevator1.go_to_floor(5)
+elevator1.go_to_floor(3)
