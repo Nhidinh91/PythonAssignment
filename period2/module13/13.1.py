@@ -14,9 +14,8 @@ def check_prime_number(number):
         if count < 2:
             check = True
         response = {
-            "number": number,
-            "check": check,
-            "status": 200
+            "Number": number,
+            "isPrime": check,
         }
         return response
     except ValueError:
